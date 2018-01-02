@@ -11,8 +11,13 @@ track.append(Message('program_change', program=12, time=0))
 beat_length = 200
 
 def do_note(note, beats):
-    track.append(Message('note_on', note=note, velocity=127, time=0))
-    track.append(Message('note_off', note=note, velocity=127, time=int(beats*beat_length)))
+    time = int(beats*beat_length)
+    if note is None:
+        #rest
+        track.append(Message('note_off', note=0, velocity=127, time=time))
+    else:
+        track.append(Message('note_on', note=note, velocity=127, time=0))
+        track.append(Message('note_off', note=note, velocity=127, time=time))
 
 notes = [
     #1st line
@@ -78,20 +83,21 @@ notes = [
 
     (to_note('c'), 1),
     (to_note('d'), 1),
-    (to_note('g', 4), 1), #(to_note('e'), 1), #TODO: check this.
-    (to_note('e'), 1),
+    (to_note('g', 4), 1), #(None, 2),
 
     #4th line
 
+    (to_note('e'), 1),
+    (to_note('e'), 1),
     (to_note('f'), 1),
     (to_note('g'), 1),
-    (to_note('g'), 1),
-    (to_note('f'), 1),
 
+    (to_note('g'), 1),
+    (to_note('f'), 1),
     (to_note('e'), 1),
     (to_note('d'), 1),
-    (to_note('c'), 1),
 
+    (to_note('c'), 1),
     (to_note('c'), 1),
     (to_note('d'), 1),
     (to_note('e'), 1),

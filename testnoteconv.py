@@ -10,6 +10,9 @@ class TestToNote(unittest.TestCase):
     def test_middle_c(self):
         self.assertEqual(noteconv.to_note('c'), 60)
 
+    def test_middle_c_sharp(self):
+        self.assertEqual(noteconv.to_note('c') + 1, noteconv.to_note('c#'))
+
     def test_a_440(self):
         self.assertEqual(noteconv.to_note('a', 5), 69)
 
