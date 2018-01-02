@@ -1,6 +1,6 @@
 base_notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
-def to_note(base_note, octave=4):
+def to_note(base_note, octave=5):
     '''http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm
     '''
     if not (0 <= octave <= 10):

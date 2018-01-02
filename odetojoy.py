@@ -78,7 +78,7 @@ notes = [
 
     (to_note('c'), 1),
     (to_note('d'), 1),
-    (to_note('g', 3), 1), #(to_note('e'), 1), #TODO: check this.
+    (to_note('g', 4), 1), #(to_note('e'), 1), #TODO: check this.
     (to_note('e'), 1),
 
     #4th line
