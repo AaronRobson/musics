@@ -2,6 +2,7 @@ import unittest
 
 import noteconv
 
+
 class TestToNote(unittest.TestCase):
 
     def test_middle_octave(self):
@@ -15,6 +16,7 @@ class TestToNote(unittest.TestCase):
 
     def test_a_440(self):
         self.assertEqual(noteconv.to_note('a', 5), 69)
+
 
 if __name__ == '__main__':
     unittest.main()

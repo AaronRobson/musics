@@ -13,17 +13,19 @@ chord_track.append(Message('program_change', program=12, time=0))
 
 beat_length = 200
 
+
 def do_note(track, note, beats):
     time = int(beats*beat_length)
     if note is None:
-        #rest
+        # a rest between notes
         track.append(Message('note_off', note=0, velocity=127, time=time))
     else:
         track.append(Message('note_on', note=note, velocity=127, time=0))
         track.append(Message('note_off', note=note, velocity=127, time=time))
 
+
 main_notes = [
-    #1st line
+    # 1st line
 
     (to_note('e'), 1),
     (to_note('e'), 1),
@@ -44,7 +46,7 @@ main_notes = [
     (to_note('d'), 0.5),
     (to_note('d'), 2),
 
-    #2nd line
+    # 2nd line
 
     (to_note('e'), 1),
     (to_note('e'), 1),
@@ -65,7 +67,7 @@ main_notes = [
     (to_note('c'), 0.5),
     (to_note('c'), 2),
 
-    #3rd line
+    # 3rd line
 
     (to_note('d'), 1),
     (to_note('d'), 1),
@@ -86,9 +88,9 @@ main_notes = [
 
     (to_note('c'), 1),
     (to_note('d'), 1),
-    (to_note('g', 4), 1), #(None, 2),
+    (to_note('g', 4), 1),
 
-    #4th line
+    # 4th line
 
     (to_note('e'), 1),
     (to_note('e'), 1),
@@ -113,26 +115,26 @@ for note, beats in main_notes:
     do_note(main_track, note, beats)
 
 chord_notes = [
-    #1st line
+    # 1st line
     (to_note('c', 4), 4),
     (to_note('g', 3), 4),
     (to_note('c', 4), 4),
     (to_note('g', 3), 4),
- 
-    #2nd line
+
+    # 2nd line
     (to_note('c', 4), 4),
     (to_note('g', 3), 4),
     (to_note('c', 4), 4),
     (to_note('g', 3), 2),
     (to_note('c', 4), 2),
 
-    #3rd line
+    # 3rd line
     (to_note('g', 3), 4),
     (to_note('g', 3), 4),
     (to_note('g', 3), 4),
     (to_note('g', 3), 4),
 
-    #4th line
+    # 4th line
     (to_note('c', 4), 4),
     (to_note('g', 3), 4),
     (to_note('c', 4), 4),
