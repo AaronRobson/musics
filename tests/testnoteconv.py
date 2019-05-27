@@ -3,8 +3,13 @@ import unittest
 import noteconv
 
 
-class TestToNote(unittest.TestCase):
+class TestBaseNotes(unittest.TestCase):
+    def test_case(self):
+        for base_note in noteconv.base_notes:
+            self.assertEqual(base_note, base_note.upper())
 
+
+class TestToNote(unittest.TestCase):
     def test_middle_octave(self):
         self.assertEqual(noteconv.to_note('c'), noteconv.to_note('c', 5))
 
