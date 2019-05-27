@@ -13,10 +13,15 @@ def input_event_repr(input_event):
     )
 
 
-inputs.InputEvent.__repr__ = input_event_repr
+def _main():
+    inputs.InputEvent.__repr__ = input_event_repr
 
-while True:
-    events = inputs.get_gamepad()
-    for event in events:
-        if event.ev_type != 'Sync':
-            print('\t'.join([event.code, repr(event.state)]))
+    while True:
+        events = inputs.get_gamepad()
+        for event in events:
+            if event.ev_type != 'Sync':
+                print('\t'.join([event.code, repr(event.state)]))
+
+
+if __name__ == '__main__':
+    _main()
