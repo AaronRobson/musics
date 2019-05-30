@@ -4,22 +4,18 @@ os:
 language: python
 
 python:
-  - 2.7
-  - pypy
-  - 3.5
   - 3.6
   - nightly
-  - pypy3
 
 install:
   - pip install -r requirements.txt
   - pip install flake8
-  - if [[ $TRAVIS_PYTHON_VERSION != 2.7 ]]; then pip install mypy; fi
+  - pip install mypy
   - pip install python-coveralls
 
 script:
   - flake8 .
-  - if [[ $TRAVIS_PYTHON_VERSION != 2.7 ]]; then mypy .; fi
+  - mypy .
   - nosetests
   - coverage run --source=. -m unittest discover
 
