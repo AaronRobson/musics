@@ -3,6 +3,10 @@
 .PHONY: all
 all: check test
 
+.PHONY: clean
+clean:
+	rm -f *.mid *.midi
+
 .PHONY: check
 check:
 	flake8 .
