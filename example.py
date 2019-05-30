@@ -1,7 +1,7 @@
 from mido import Message, MidiFile, MidiTrack
 
 
-def _main():
+def _main() -> None:
     mid = MidiFile()
     track = MidiTrack()
     mid.tracks.append(track)

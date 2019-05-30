@@ -1,7 +1,17 @@
-base_notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+from typing import List
+
+base_notes: List[str] = [
+    'C', 'C#',
+    'D', 'D#',
+    'E',
+    'F', 'F#',
+    'G', 'G#',
+    'A', 'A#',
+    'B'
+]
 
 
-def to_note(base_note, octave=5):
+def to_note(base_note: str, octave: int = 5) -> int:
     '''https://acassis.wordpress.com/2016/08/09/converting-music-to-midi-and-midi-to-note-numbers/
     '''  # noqa
     if not (0 <= octave <= 10):

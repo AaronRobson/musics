@@ -13,7 +13,7 @@ def input_event_repr(input_event):
     )
 
 
-def _main():
+def _main() -> None:
     inputs.InputEvent.__repr__ = input_event_repr
 
     while True:
