@@ -14,12 +14,12 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install flake8
-  - pip install mypy
+  - if [[ $TRAVIS_PYTHON_VERSION != 2.7 ]]; then pip install mypy; fi
   - pip install python-coveralls
 
 script:
   - flake8 .
-  - mypy .
+  - if [[ $TRAVIS_PYTHON_VERSION != 2.7 ]]; then mypy .; fi
   - nosetests
   - coverage run --source=. -m unittest discover
 
