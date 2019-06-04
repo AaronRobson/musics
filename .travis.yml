@@ -1,11 +1,17 @@
+dist: xenial   # required for Python >= 3.7
+
 os:
   - linux
 
 language: python
 
-python:
-  - 3.6
-  - nightly
+matrix:
+  include:
+    - python: 3.6
+    - python: 3.7
+    - python: nightly
+  allow_failures:
+    - python: nightly
 
 install:
   - pip install -r requirements.txt
