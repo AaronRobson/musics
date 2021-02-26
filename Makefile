@@ -7,6 +7,10 @@ all: check test
 clean:
 	rm -f *.mid *.midi
 
+.PHONY: install
+install:
+	pip3 install --upgrade -r requirements.txt -r dev-requirements.txt
+
 .PHONY: check
 check: lint type-check
 
