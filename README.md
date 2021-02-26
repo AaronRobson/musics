@@ -8,7 +8,7 @@ Music experimentation
 
 # Install requirements
 ```bash
-pip install -r requirements.txt --user
+make install
 ```
 
 # Running style checks and tests
